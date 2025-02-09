@@ -1,0 +1,58 @@
+@use "global" as *;
+
+.last-cta{
+    background: linear-gradient(287deg, $gradient-0 0%, $gradient-100 100%);
+
+    .last-wrapper{
+        display: flex;
+        justify-content: space-between;
+        gap:35px;
+        padding-inline:88px;
+        padding-bottom:57px;
+
+        @include sp{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:40px;
+            padding-inline:16px;
+            padding-bottom:46px;
+        }
+    }
+
+    h2{
+        color:#fff;
+        padding-top:96px;
+        padding-bottom:79px;
+
+        @include sp{
+            padding-top:72px;
+            padding-bottom:16px;
+            line-height: 150%; 
+        } 
+    }
+
+    .last-textarea{
+
+        p{
+            color:#fff;
+            line-height: 180%; 
+            font-size: rclamp(12,16);
+            margin-top:rclamp(12,32);
+            margin-bottom:rclamp(16,48);
+
+            @include sp{
+                text-align:center;
+            }
+        }
+        
+        img{
+            @include sp{
+                width:240px;
+                display: block;
+                margin-inline:auto;
+            }
+        }
+
+    }
+}

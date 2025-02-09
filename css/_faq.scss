@@ -1,0 +1,162 @@
+@use "global" as *;
+
+.faq {
+    background: #F9F9F9;
+}
+
+.faq-wrapper {
+    padding-top: 96px;
+    padding-bottom: 72px;
+    max-width: 1024px + 40px;
+    padding-inline: 20px;
+
+    @include sp {
+        padding-top: 35px;
+    }
+
+
+    h2 {
+        margin-bottom: 70px;
+
+        @include sp {
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.faq-box {
+
+    margin-bottom: 24px;
+
+    @include sp {
+        margin-bottom: 16px;
+    }
+
+    .faq-toggle {
+        position: absolute;
+        width: rclamp(16, 32);
+        height: 2px;
+        background: #333;
+        right: rclamp(10, 24);
+        //top:rclamp(24,40);
+        top: 50%;
+        transition: all 0.3s ease-in-out;
+
+        &:after {
+            //縦線
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: rclamp(16, 32);
+            background: #333;
+            right: 50%;
+            top: 50%;
+            transform: translate(0, -50%);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    &.active {
+
+        //クリックされたときの表示
+        .faq-q {
+            border-radius: 10px 10px 0 0;
+            background: $main-color;
+
+            p {
+                color: #fff;
+
+                span {
+                    color: $main-color;
+                    background-color: #fff;
+                }
+            }
+
+        }
+
+        //.faq-a{
+        display:block;
+        //}
+
+        .faq-toggle {
+            background-color: #fff;
+
+            &:after {
+                display: none; // 縦を消してーにする
+            }
+        }
+    }
+}
+
+.faq-q {
+    position: relative;
+    padding-left: rclamp(52, 104);
+    padding-right: 34px;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    border-radius: 10px;
+    background: #FFF;
+
+    @include sp {
+
+        height: 64px;
+    }
+
+
+    p {
+        font-size: rclamp(14, 16);
+        font-style: normal;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+
+        @include sp {
+            line-height: 150%;
+        }
+
+        span {
+            //Q
+            position: absolute;
+            font-family: "Goldman";
+            color: #FFF;
+            font-size: rclamp(16, 32);
+            font-weight: 400;
+            background-color: $main-color;
+            border-radius: 50%;
+            width: rclamp(32, 44);
+            height: rclamp(32, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: rclamp(10, 36);
+        }
+    }
+}
+
+.faq-a {
+    display: none; //デフォルト非表示
+    height: auto;
+    background: #fff;
+    padding-inline: rclamp(10, 36);
+    padding-block: rclamp(10, 24);
+    color: #333;
+    border-radius: 0 0 10px 10px;
+
+    p {
+        font-size: rclamp(14, 16);
+        font-weight: 400;
+        line-height: 180%;
+    }
+
+    ol {
+        margin-block: 20px;
+        margin-left: 20px;
+        font-size: rclamp(14, 16);
+    }
+
+    li {
+        list-style-type: decimal;
+        line-height: 180%;
+    }
+}

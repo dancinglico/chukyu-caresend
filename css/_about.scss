@@ -1,0 +1,171 @@
+@use "global" as *;
+
+.about {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 16px;
+
+    @include sp {
+        padding-top: 20px;
+        padding-bottom: 16px;
+    }
+
+    h2 {
+        line-height: 150%;
+        margin-bottom: 51px;
+
+        @include sp {
+            margin-bottom: 63px;
+        }
+    }
+
+    p {
+        font-family: "Noto Sans JP";
+        font-size: rclamp(20, 24);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 180%;
+        
+    }
+
+    .highlight {
+        color: $main-color;
+        font-size: rclamp(24, 32);
+        font-style: normal;
+        font-weight: 700;
+        display: inline-block;
+        margin-top: 12px;
+
+        @include sp {
+            margin-top: 8px;
+        }
+
+    }
+
+    .about-image {
+        border-radius: 5px;
+        background: #F9F9F9;
+        width: rclamp(341, 808);
+        height: 276px;
+        position: relative;
+        margin-inline: auto;
+        margin-top: 45px;
+
+        @include sp {
+            height: 648px;
+            margin-top: 54px;
+        }
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+}
+
+//------Caresendの特徴--------------
+
+
+.feature {
+    padding-top: 100px;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    @include sp{
+        padding-top: 55px;
+        padding-inline:17px;
+    }
+
+    h2 {
+        line-height: 150%;
+        margin-bottom: 51px;
+    }
+
+}
+
+.feature-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 31px;
+}
+
+.feature-box {
+    border: 1px solid $main-color;
+    width: rclamp(341,480);
+    height: 325px;
+    padding-top: 14px;
+    padding-inline: rclamp(30,31);
+    padding-bottom: rclamp(22,52);
+    text-align: center;
+    box-sizing: border-box;
+
+    @include sp{
+        height: auto;
+    }
+
+    h3 {
+        color: #F47500;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 150%;
+        margin-block: 18px;
+
+        @include sp{
+            margin-block: 19px;
+        }
+    }
+
+    p {
+        line-height: 180%;
+        text-align: left;
+    }
+
+}
+
+.download {
+    width: 100%;
+    height: 240px;
+    background: url('../img/background-4876988_1280\ 1.png');
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 61px;
+
+    @include sp{
+        background: url('../img/background-4876988_1280\ 1sp.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        height: 257px; 
+    }
+
+    p {
+        color: #FFF;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 180%;
+        /* 43.2px */
+    }
+
+    .download-button {
+        background-color: #fff;
+        color: $main-color;
+        font-size: 20px;
+        font-weight: 700;
+        padding-block: 16px;
+        border-radius: 25px;
+        width: 320px;
+        margin-inline: auto;
+        margin-top: 24px;
+
+        @include sp{
+            margin-top: 39px;
+        }
+
+    }
+}

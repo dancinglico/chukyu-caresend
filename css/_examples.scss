@@ -1,0 +1,128 @@
+@use "global" as *;
+
+.examples {
+   max-width: 1024px;
+    padding-top: 96px;
+    padding-bottom: 39px;
+    margin-inline: auto;
+    
+
+    @include sp{
+        padding-top: 72px;
+        padding-bottom: 45px;
+    }
+
+    h2{
+        margin-bottom:63px;
+        line-height: 1.5;
+
+        @include sp{
+            margin-bottom:50px;
+        }
+    }
+
+    .swiper{
+        margin-inline:auto;
+        max-width: 880px+16px;
+        
+
+    }
+
+    .swiper-wrapper{
+        width: 100%;
+        
+        position:relative;
+        margin-inline: auto;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .swiper-slide{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:8px;
+        padding-bottom:16px;
+        margin:0;
+
+        @include sp{
+            padding-inline:32px;
+        }
+        
+    }
+}
+
+
+
+.card {
+    width: 100%;
+    height: 488px;
+    border-radius: 30px 0px;
+    background: #FFF;
+    box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
+    padding-inline: 20px;
+    padding-top: 32px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+
+    @include sp{
+        height: 471px;
+        padding-top: 31px;
+        padding-inline: 10px;
+    }
+
+
+    h3 {
+        font-size: rclamp(18,24);
+        font-weight: 700;
+        line-height: 180%;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        margin-bottom: 24px;
+
+        .blue {
+            color: $main-color;
+        }
+    }
+
+    p {
+        font-size: rclamp(12,14);
+        line-height: 180%;
+        margin-bottom: 37px;
+
+        @include sp{
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.example-button-prev,
+.example-button-next {
+    &:after {
+        content: '';
+    }
+    width:rclamp(20,34);
+    position:absolute;
+    
+    top:60.7%;
+
+    @include sp{
+        top:57.5%;
+    }
+
+}
+
+.example-button-prev {
+    background: url('../img/arrow-01.svg')  center no-repeat;
+    background-size: contain;
+    left:rclamp(6,18);
+   
+}
+
+.example-button-next {
+    background: url('../img/arrow-02.svg')  center no-repeat;
+    background-size: contain;
+    right:rclamp(6,18);
+}
