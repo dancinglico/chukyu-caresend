@@ -192,7 +192,7 @@ header {
   gap: 28px;
   color: #007FC6;
   margin-right: 60px;
-  font-size: 16px;
+  font-size: clamp(1rem, 0.8062015504rem + 0.5167958656vw, 1.6rem);
 }
 .header-inner .header-navi ul a:hover {
   opacity: 0.7;

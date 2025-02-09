@@ -63,7 +63,7 @@ header {
         gap: 28px;
         color: $main-color;
         margin-right: 60px;
-        font-size: 16px;
+        font-size: rclamp(10,16);
 
         a {
             &:hover {
