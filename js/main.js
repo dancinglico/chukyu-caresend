@@ -7,6 +7,7 @@ $(".hamburger").on("click", function () {
 $(".sp-navi li a").on("click", function (event) {
     event.preventDefault();
     $('.sp-navi').slideToggle();
+    $(".menu-icon").toggleClass("active");
 
     var target = $(this).attr("href"); // クリックされたリンクのhref属性を取得
     var targetPosition = $(target).offset().top; // 該当セクションの位置を取得
