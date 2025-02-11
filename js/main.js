@@ -1,47 +1,33 @@
 //---ハンバーガーメニュー
 $(".hamburger").on("click", function () {
-    $('.sp-navi').slideToggle(); // Toggles the SP menu
-    $(".menu-icon").toggleClass("active");
+    toggleMenu('.sp-navi', ".menu-icon");
 });
 
-$(".sp-navi li a").on("click", function (event) {
-    event.preventDefault();
-    $('.sp-navi').slideToggle();
-    $(".menu-icon").toggleClass("active");
+function toggleMenu(SPmenu, menuIcon) {
+    $(SPmenu).slideToggle(); // Toggles the SP menu
+    $(menuIcon).toggleClass("active"); //×に変更
+}
+
+function smoothScroll(event) {
+    event.preventDefault(); // デフォルトのリンク動作を無効化
 
     var target = $(this).attr("href"); // クリックされたリンクのhref属性を取得
     var targetPosition = $(target).offset().top; // 該当セクションの位置を取得
-    var headerHeight = $('header').outerHeight();
+    var headerHeight = $('header').outerHeight(); // ヘッダーの高さを取得
 
     $("html, body").animate({
-        scrollTop: targetPosition- headerHeight
+        scrollTop: targetPosition - headerHeight // ヘッダーの高さを引く
     }, 1000); 
+}
+
+$(".header-navi li a").on("click", smoothScroll);
+
+$(".sp-navi li a").on("click", function (event) {    
+    toggleMenu('.sp-navi', ".menu-icon"); //メニューを閉じる
+    smoothScroll.call(this, event); 
 });
 
-$(".header-navi li a").on("click", function (event) {
-    event.preventDefault();
-
-    var target = $(this).attr("href"); // クリックされたリンクのhref属性を取得
-    var targetPosition = $(target).offset().top; // 該当セクションの位置を取得
-    var headerHeight = $('header').outerHeight();
-
-    $("html, body").animate({
-        scrollTop: targetPosition- headerHeight
-    }, 1000); 
-});
-
-$(".cta-button a").on("click", function (event) {
-    event.preventDefault();
-
-    var target = $(this).attr("href"); // クリックされたリンクのhref属性を取得
-    var targetPosition = $(target).offset().top; // 該当セクションの位置を取得
-    var headerHeight = $('header').outerHeight();
-
-    $("html, body").animate({
-        scrollTop: targetPosition- headerHeight
-    }, 1000); 
-});
-
+$(".cta-button a").on("click", smoothScroll);
 
 
 //---form---------
