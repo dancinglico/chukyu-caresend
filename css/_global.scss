@@ -32,12 +32,15 @@ $sp: 767.98px; //スマホ
     }
 }
 
+html, body {
+    overflow-x: hidden; // 横スクロールを防ぐ
+}
+
 
 html {
     font-size: 62.5%;
     line-height: 1;
 }
-
 
 
 body {
@@ -192,6 +195,7 @@ h2 {
         visibility: hidden;
         transition: all 0.5s;
         transform: translateX(-150px);
+        overflow-x: hidden;
     }
 
     .fadein-right {
@@ -199,6 +203,7 @@ h2 {
         visibility: hidden;
         transition: all 0.5s;
         transform: translateX(150px);
+        overflow-x: hidden;
     }
 }
 
@@ -209,3 +214,8 @@ h2 {
     transform: translate(0, 0);
 }
 
+/* アウトラインを表示
+* {
+    outline: 2px solid red;
+  }
+    */
